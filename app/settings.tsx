@@ -1,11 +1,9 @@
 import { View, Text, StyleSheet } from 'react-native';
-import { Link } from 'expo-router';
 
-export default function MainScreen() {
+export default function SettingsScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Main Screen</Text>
-      <Link href="/search">Go to Search</Link>
+      <Text style={styles.text}>Settings Screen</Text>
     </View>
   );
 }
