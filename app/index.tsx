@@ -7,8 +7,9 @@ export default function MainScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Main Screen</Text>
-      <Link href="/search">Go to Search</Link>
-      <Card visible={true} onClose={() => {console.log("CLOSED")}}/>
+      {/* <Link href="/search">Go to Search</Link> */}
+      <Link href="/login">Log in</Link>
+      {/* <Card visible={true} onClose={() => {console.log("CLOSED")}}/> */}
     </View>
   );
 }

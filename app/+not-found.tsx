@@ -1,14 +1,20 @@
-import { View, StyleSheet } from 'react-native';
-import { Link, Stack } from 'expo-router';
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Stack, useRouter } from "expo-router";
 
 export default function NotFoundScreen() {
+  const router = useRouter();
+
+  const goHome = () => {
+    router.replace("/");
+  };
+  
   return (
     <>
-      <Stack.Screen options={{ title: 'Oops! Not Found' }} />
+      <Stack.Screen options={{ title: "Oops! Not Found" }} />
       <View style={styles.container}>
-        <Link href="/" style={styles.button}>
-          Go back to Home screen!
-        </Link>
+        <TouchableOpacity onPress={goHome}>
+          <Text style={styles.button}>Go back to Home screen!</Text>
+        </TouchableOpacity>
       </View>
     </>
   );
@@ -17,14 +23,14 @@ export default function NotFoundScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25292e',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#25292e",
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   button: {
     fontSize: 20,
-    textDecorationLine: 'underline',
-    color: '#fff',
+    textDecorationLine: "underline",
+    color: "#fff",
   },
 });

@@ -19,7 +19,11 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack>
+    <Stack
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Stack.Screen name="index" options={{ title: "Main" }} />
       <Stack.Screen name="login" options={{ title: "Login" }} />
       <Stack.Screen name="search" options={{ title: "Search" }} />

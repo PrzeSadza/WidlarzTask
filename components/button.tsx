@@ -7,7 +7,7 @@ import {
   TextStyle,
   Platform,
 } from "react-native";
-import { StyledText } from "./styled-text";
+import StyledText from "./styled-text";
 
 interface BtnProps {
   title: string;
@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(43, 45, 66, 1)",
     padding: 15,
     borderRadius: 8,
-    width: "80%",
+    width: Platform.OS === "web" ? "20%" : "90%",
+    maxWidth: Platform.OS === "web" ? "20%" : "100%",
     alignSelf: "center",
     marginBottom: 10,
     alignItems: "center",
