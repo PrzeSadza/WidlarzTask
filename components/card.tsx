@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import {
   Modal,
   View,
-  Text,
   TouchableOpacity,
   StyleSheet,
   Platform,
   GestureResponderEvent,
 } from "react-native";
+import { StyledText } from "./styled-text";
+import Button from "./button";
 
 interface CardProps {
   visible: boolean;
@@ -34,7 +35,7 @@ const Card: React.FC<CardProps> = ({ visible, onClose }) => {
     >
       <View style={styles.overlay}>
         <View style={styles.modalContainer}>
-          <Text style={styles.header}>Sort records by:</Text>
+          <StyledText style={styles.header}>Sort records by:</StyledText>
 
           <View style={{ marginTop: 40 }}>
             {options.map((option, index) => (
@@ -48,14 +49,16 @@ const Card: React.FC<CardProps> = ({ visible, onClose }) => {
                     <View style={styles.radioInner} />
                   )}
                 </View>
-                <Text style={styles.optionText}>{option}</Text>
+                <StyledText>{option}</StyledText>
               </TouchableOpacity>
             ))}
           </View>
 
-          <TouchableOpacity style={styles.button} onPress={onClose}>
-            <Text style={styles.buttonText}>Confirm</Text>
-          </TouchableOpacity>
+          <Button
+            title="Confirm"
+            onPress={onClose}
+            style={{ marginTop: "auto" }}
+          />
         </View>
       </View>
     </Modal>
@@ -69,7 +72,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   modalContainer: {
-    width: Platform.OS === 'web' ? '40%' : '80%',
+    width: Platform.OS === "web" ? "40%" : "80%",
     minHeight: 420,
     backgroundColor: "rgba(141, 153, 174, 1)",
     borderRadius: 10,
@@ -80,7 +83,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 20,
-    color: "white",
   },
   optionContainer: {
     flexDirection: "row",
@@ -106,10 +108,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: "#000",
   },
-  optionText: {
-    fontSize: 16,
-    color: "white",
-  },
   button: {
     backgroundColor: "rgba(43, 45, 66, 1)",
     padding: 15,
@@ -119,10 +117,6 @@ const styles = StyleSheet.create({
     marginTop: "auto",
     marginBottom: 10,
     alignItems: "center",
-  },
-  buttonText: {
-    color: "#fff",
-    fontWeight: "bold",
   },
 });
 
