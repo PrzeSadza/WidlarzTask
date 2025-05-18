@@ -7,7 +7,7 @@ import {
   Platform,
   GestureResponderEvent,
 } from "react-native";
-import { StyledText } from "./styled-text";
+import StyledText from "./styled-text";
 import Button from "./button";
 
 interface CardProps {
